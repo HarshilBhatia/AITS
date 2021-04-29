@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+h3 {text-align: center;}
+input {text-align: center;}
+p {text-align: center;}
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+</style>
+<body>
+	<div class="content">
+		<img src="../static/logo.png" alt="Logo" class="center">
+		<p>{% if message %}
+			<p class="messaage">{{ message | safe }}</p>
+		<p>{% endif %}
+		<form action="/submitsignup" method="POST">
+		<h3>User Name</h3>
+		<input class="center-block", type="text", name="username"/>
+		<p><h3>Email-id</h3>
+		<input class="center-block", type="email", name="emailid"/>
+		<p><h3>Mobile Number</h3>
+		<input class="center-block", type="number", name="mobile"/>
+		<p><h3>Password</h3>
+		<input class="center-block", type="password", name="password"/>
+		<p><h3>Re-enter Password</h3>
+		<input class="center-block", type="password", name="repassword"/>
+		<input type="submit" value="Submit" class="btn center-block" />
+		</form>
+		<form action="/login" method="POST">
+		<input type="submit" value="Login" class="btn center-block" />
+		</form>
+	</div>
+</body>
+</html>
